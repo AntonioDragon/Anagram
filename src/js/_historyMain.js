@@ -5,7 +5,7 @@ var historyAnagramNull = document.createElement("p");
 historyAnagramNull.className = 'historyAnagramNull';
 historyAnagramNull.innerHTML = "История проверки Анограмм пуста";
 
-var activeAccordion = "block-info--active";
+var activeAccordion = "block-history--active";
 var buttonActive = "history-active";
 
 var arrayAnagram = [];
@@ -25,5 +25,9 @@ button__history.addEventListener("click", () => {
         blockOuputHistory.lastElementChild.append(historyAnagramNull);
 });
 
-
-export {historyAnagramNull,arrayAnagram,blockOuputHistory}
+function anagramCreateDomHistory(first, second, str) {
+    let historyAnagram = document.createElement('li');
+    historyAnagram.className = 'history';
+    historyAnagram.innerHTML = `${first} ${second} ${str}`;
+    blockOuputHistory.lastElementChild.append(historyAnagram);
+}

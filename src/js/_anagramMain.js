@@ -1,9 +1,3 @@
-import { anagramCheck } from './anagramCheck.js';
-import { anagramCreateDomHistory } from '../history/historyActive.js'
-import {
-    historyAnagramNull,
-    arrayAnagram
-} from '../history/historyMain.js';
 
 var inputFirst = document.querySelector('.input-first');
 var inputSecond = document.querySelector('.input-second');
@@ -27,8 +21,3 @@ document.querySelector('.card-button__anagram').addEventListener("click", () => 
     }
 
 });
-
-export {
-    inputFirst,
-    inputSecond
-};

@@ -1,15 +1,32 @@
 {
   "name": "anagram",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "jest": "^27.0.6"
-  },
-  "devDependencies": {},
   "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build",
     "test": "jest"
   },
   "author": "Antonio",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-sass": "^4.1.0",
+    "jest": "^27.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": "",
+  "description": ""
 }
