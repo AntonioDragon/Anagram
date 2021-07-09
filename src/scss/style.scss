@@ -22,7 +22,12 @@ body{
         width: 50px;
         fill: none;
         stroke: rgb(112, 112, 112);
+        transition-duration: 0.5s;
     }
+}
+.history-active{
+    transform: rotate(0.9turn);
+    stroke: rgb(18, 172, 233);
 }
 .block-history{
     position: relative;
@@ -173,6 +178,7 @@ input:invalid {
 .st2{
     stroke-width:8;stroke-miterlimit:10;
 }
+
 .st3{
     stroke-width:5;stroke-miterlimit:10;
 }
