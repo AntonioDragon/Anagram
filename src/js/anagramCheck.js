@@ -16,10 +16,8 @@ var anagramSort = function (str) {
     return str;
 }
 
-//Не знаю насчет правильности данного решения, но так как module.exports нужен только для Jest тестов
-try {
-    module.exports = {
-        anagramCheck,
-        anagramSort
-    };
-} catch {}
+
+module.exports = {
+    anagramCheck,
+    anagramSort
+}

@@ -31,3 +31,8 @@ function anagramCreateDomHistory(first, second, str) {
     historyAnagram.innerHTML = `${first} ${second} ${str}`;
     blockOuputHistory.lastElementChild.append(historyAnagram);
 }
+module.exports = {
+    anagramCreateDomHistory,
+    historyAnagramNull,
+    arrayAnagram
+};

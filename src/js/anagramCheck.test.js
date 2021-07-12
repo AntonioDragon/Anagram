@@ -1,4 +1,4 @@
-const { anagramCheck } = require('./_anagramCheck');
+const { anagramCheck } = require('./anagramCheck');
 
 describe('Checking anagram', () => {
     test('should return true', () => {

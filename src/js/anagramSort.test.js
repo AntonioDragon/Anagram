@@ -1,4 +1,5 @@
-const { anagramSort } = require('./_anagramCheck');
+const { anagramSort } = require('./anagramCheck');
+
 
 test('Sorting anagram should return sorted string', () => {
     expect(anagramSort('торт')).toBe('ортт'),

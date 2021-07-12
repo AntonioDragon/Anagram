@@ -1,23 +1,26 @@
-body{
+.body{
     font-family: 'Oswald', sans-serif;
 }
-.block-button{
+.block-button {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100px;
-    &__element{
+
+    &__element {
         background-color: rgb(236, 236, 236);
         height: 50px;
         width: 50px;
         border: 2px;
         border-radius: 50%;
     }
-    &__text{
+
+    &__text {
         text-align: center;
         margin-top: 5px;
     }
-    &__history{
+
+    &__history {
         height: 50px;
         width: 50px;
         fill: none;
@@ -25,76 +28,91 @@ body{
         transition-duration: 0.5s;
     }
 }
-.history-active{
+
+.history-active {
     transform: rotate(0.9turn);
     stroke: rgb(18, 172, 233);
 }
-.block-history{
+
+.block-history {
     position: relative;
     background-color: rgb(27, 152, 224);
     height: 0;
     overflow: hidden;
     transition-duration: 1s;
     overflow-y: auto;
-    &__title{
+
+    &__title {
         text-align: left;
         margin-left: 30px;
         font-size: 40px;
     }
-    &--active{
+
+    &--active {
         height: 400px;
     }
 }
+
 .historyAnagramNull {
     font-size: 30px;
     color: rgb(36, 128, 165)
 }
+
 .history {
     font-size: 30px;
     color: rgb(19, 72, 94)
 }
-.card{
+
+.card {
     height: 310px;
     background-color: rgb(36, 123, 160);
     border-radius: 20px 20px 0px 0px;
     margin: 20px;
-    &__input{
+
+    &__input {
         height: 110px;
         margin: 10px 15px;
         background-color: rgb(232, 241, 242);
         border: none;
         font-size: 26px;
     }
-    &__output{
+
+    &__output {
         position: relative;
         top: 52px;
         height: 110px;
         margin: 5px 15px;
     }
-    &__text{
+
+    &__text {
         margin: 0;
         padding-top: 10px;
         text-align: center;
         font-size: 25px;
         color: rgb(236, 236, 236);
     }
-    &__title{
+
+    &__title {
         height: 50px;
         background-color: rgb(27, 152, 224);
         border-radius: 20px 20px 0px 0px;
     }
-    &--one--pos{
+
+    &--one--pos {
         grid-area: 1 / 1 / 2 / 2;
     }
-    &--two--pos{
+
+    &--two--pos {
         grid-area: 1 / 3 / 2 / 4;
     }
 }
-.card-button{
+
+.card-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    &__anagram{
+
+    &__anagram {
         height: 80px;
         width: 200px;
         border-radius: 20%;
@@ -103,7 +121,8 @@ body{
         font-size: 25px;
         color: rgb(232, 241, 242);
     }
-    &--pos{
+
+    &--pos {
         grid-area: 1 / 2 / 2 / 3;
     }
 }
@@ -116,52 +135,62 @@ body{
     background: rgb(18, 172, 233);
     box-shadow: 0 3px rgb(27, 155, 206) inset;
 }
-.cards{
+
+.cards {
     display: grid;
     grid-template-columns: 1fr 0.4fr 1fr;
     grid-template-rows: 1fr;
 }
-.head{
-    &__info{
+
+.head {
+    &__info {
         grid-area: 2 / 1 / 3 / 2;
         text-align: center;
         color: rgb(232, 241, 242);
     }
-    &__title{
+
+    &__title {
         grid-area: 1 / 2 / 2 / 3;
         text-align: center;
         font-size: 40px;
         color: rgb(27, 152, 224);
     }
 }
-.header{
+
+.header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     background-color: rgb(232, 241, 242);
 }
-.history-active{
+
+.history-active {
     stroke: rgb(18, 172, 233);
 }
-.info{
+
+.info {
     background-color: rgb(36, 123, 160);
     border-radius: 0px 20px 0px 0px;
-    &__text{
+
+    &__text {
         font-size: 30px;
     }
 }
-.input{
+
+.input {
     width: 100%;
     height: 100%;
     background-color: rgb(232, 241, 242);
     font-size: 20px;
     outline: none;
 }
+
 input:invalid {
     color: red;
     border: 2px inset red;
 }
-.output{
+
+.output {
     width: 100%;
     height: 100%;
     background-color: rgb(232, 241, 242);
@@ -169,26 +198,36 @@ input:invalid {
     border: none;
     font-size: 26px;
 }
-.st0{
-    stroke-width:10;stroke-miterlimit:10;
-}
-.st1{
-    stroke-width:10;stroke-miterlimit:10;
-}
-.st2{
-    stroke-width:8;stroke-miterlimit:10;
+
+.st0 {
+    stroke-width: 10;
+    stroke-miterlimit: 10;
 }
 
-.st3{
-    stroke-width:5;stroke-miterlimit:10;
+.st1 {
+    stroke-width: 10;
+    stroke-miterlimit: 10;
 }
+
+.st2 {
+    stroke-width: 8;
+    stroke-miterlimit: 10;
+}
+
+.st3 {
+    stroke-width: 5;
+    stroke-miterlimit: 10;
+}
+
 @media (max-width : 1100px) {
     .card__title {
         height: 70px;
     }
+
     .card {
         height: 330px;
     }
+
     .card__text {
         font-size: 20px;
     }
@@ -199,21 +238,27 @@ input:invalid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0.4fr 1fr;
     }
+
     .card--one--pos {
         grid-area: 1 / 1 / 2 / 2;
     }
+
     .card-button--pos {
         grid-area: 2 / 1 / 3 / 2;
     }
+
     .card--two--pos {
-        grid-area: 3 / 1 / 4 / 2; 
+        grid-area: 3 / 1 / 4 / 2;
     }
+
     .info__text {
         font-size: 25px;
     }
+
     .head__title {
         font-size: 30px;
     }
+
     .history {
         font-size: 20px;
     }

@@ -1,3 +1,6 @@
+require('../scss/style.scss');
+const { anagramCheck } = require('./anagramCheck.js');
+const { anagramCreateDomHistory , historyAnagramNull, arrayAnagram } = require('./historyMain.js')
 
 var inputFirst = document.querySelector('.input-first');
 var inputSecond = document.querySelector('.input-second');
@@ -21,3 +24,7 @@ document.querySelector('.card-button__anagram').addEventListener("click", () => 
     }
 
 });
+
+module.exports = {
+    inputFirst,inputSecond
+}
