@@ -1,4 +1,6 @@
 require('../scss/style.scss');
+ArtBackground = require('../assets/img-icon/artMinimal.png');
+
 const { anagramCheck } = require('./anagramCheck.js');
 const { anagramCreateDomHistory , historyAnagramNull, arrayAnagram } = require('./historyMain.js')
 
