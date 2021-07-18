@@ -1,5 +1,5 @@
 function anagramCheck(str1, str2) {
-    if (str1 === undefined || str2 === undefined || str1.split('').length != str2.split('').length || str1.trim() === str2.trim()) {
+    if (str1 === undefined || str2 === undefined || str1.split("").length != str2.split("").length || str1.trim() === str2.trim()) {
         return false;
     } else {
         let sort_str1 = anagramSort(str1);
@@ -11,8 +11,8 @@ function anagramCheck(str1, str2) {
     }
 }
 var anagramSort = function (str) {
-    str = str.replace(/\s+g/, '').toLowerCase()
-        .split('').sort().join('');
+    str = str.replace(/\s+g/, "").toLowerCase()
+        .split("").sort().join("");
     return str;
 }
 

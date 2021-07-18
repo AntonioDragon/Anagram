@@ -1,33 +1,31 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const {
-    CleanWebpackPlugin
-} = require('clean-webpack-plugin');
-const MiniCSS = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const MiniCSS = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, './src/js/anagramMain.js'),
-        validation: path.resolve(__dirname, './src/js/inputValid.js'),
+        main: path.resolve(__dirname, "./src/js/App.js"),
     },
     output: {
-        filename: 'modules/[name].bundle.js',
-        path: path.resolve(__dirname, './dist/')
+        filename: "modules/[name].bundle.js",
+        path: path.resolve(__dirname, "./dist/"),
+        sourceMapFilename: "[name].js.map"
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: './src/public/index.html',
-            filename: 'index.html'
+            template: "./src/public/index.html",
+            filename: "index.html"
         }),
         new CleanWebpackPlugin(),
         new MiniCSS({
-            filename: 'css/style.css'
+            filename: "css/style.css"
         }),
         new CopyWebpackPlugin({
             patterns: [{
-                from: path.resolve(__dirname, 'src/assets/static/Tree.png'),
-                to: path.resolve(__dirname, 'dist/assets/static/')
+                from: path.resolve(__dirname, "src/assets/static/Tree.png"),
+                to: path.resolve(__dirname, "dist/assets/static/")
             }]
         })
 
@@ -37,36 +35,33 @@ module.exports = {
                 test: /\.(s*)css$/,
                 use: [
                     MiniCSS.loader,
-                    'css-loader',
-                    'sass-loader',
+                    "css-loader",
+                    "sass-loader",
                 ]
             },
             {
                 test: /\.(jpeg|png|svg|gif)$/,
                 use: {
-                    loader: 'file-loader',
+                    loader: "file-loader",
                     options: {
-                        outputPath: 'assets/img/'
+                        outputPath: "assets/img/"
                     }
                 }
             },
             {
                 test: /\.(ttf|wolf|wolf2|eot)$/,
                 use: {
-                    loader: 'file-loader',
+                    loader: "file-loader",
                     options: {
-                        outputPath: 'fonts/'
+                        outputPath: "fonts/"
                     }
                 }
             },
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
+                    loader: "babel-loader",
                 }
             }
 
@@ -74,5 +69,6 @@ module.exports = {
     },
     devServer: {
         port: 9000,
+        watchContentBase: true
     },
 };

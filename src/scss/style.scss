@@ -1,7 +1,7 @@
-@import '~normalize.css';
-@import './oswald.scss';
+@import "~normalize.css";
+@import "./oswald.scss";
 .body{
-    font-family: 'Oswald', sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 .block-button {
     display: flex;
@@ -31,7 +31,7 @@
     }
 }
 
-.history-active {
+.history-active  {
     transform: rotate(0.9turn);
     stroke: rgb(18, 172, 233);
 }
@@ -41,7 +41,7 @@
     background-color: rgb(27, 152, 224);
     height: 0;
     overflow: hidden;
-    transition-duration: 1s;
+    transition-duration: 0/s;
     overflow-y: auto;
 
     &__title {
@@ -49,12 +49,10 @@
         margin-left: 30px;
         font-size: 40px;
     }
-
-    &--active {
-        height: 400px;
-    }
 }
-
+.block-history__active .block-history{
+    height: 400px;
+} 
 .historyAnagramNull {
     font-size: 30px;
     color: rgb(36, 128, 165)
@@ -90,7 +88,7 @@
         margin: 0;
         padding-top: 10px;
         text-align: center;
-        font-size: 25px;
+        font-size: 18px;
         color: rgb(236, 236, 236);
     }
 
@@ -166,9 +164,6 @@
     background-color: rgb(232, 241, 242);
 }
 
-.history-active {
-    stroke: rgb(18, 172, 233);
-}
 
 .info {
     background-color: rgb(36, 123, 160);
@@ -198,7 +193,7 @@ input:invalid {
     background-color: rgb(232, 241, 242);
     outline: none;
     border: none;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .st0 {
@@ -233,9 +228,12 @@ input:invalid {
     .card__text {
         font-size: 20px;
     }
+    .output {
+        font-size: 20px;
+    }
 }
 
-@media (max-width : 768px) {
+@media (max-width : 900px) {
     .cards {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0.4fr 1fr;
@@ -262,6 +260,9 @@ input:invalid {
     }
 
     .history {
-        font-size: 20px;
+        font-size: 22px;
+    }
+    .output {
+        font-size: 26px;
     }
 }
