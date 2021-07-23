@@ -7,7 +7,8 @@
     "watch": "webpack serve --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test",
+    "jest": "jest"
   },
   "author": "Antonio",
   "license": "ISC",
@@ -26,7 +27,7 @@
     "node-sass": "^6.0.1",
     "sass-loader": "^12.1.0",
     "url-loader": "^4.1.1",
-    "webpack": "^5.45.1",
+    "webpack": "^5.46.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
