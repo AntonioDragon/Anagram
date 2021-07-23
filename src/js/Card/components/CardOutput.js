@@ -1,18 +1,29 @@
 const React = require("react")
 
-function CardPosOutput(props) {
-    CardOutputTitle = () =>{
+function CardOutput(props) {
+    const CardOutputTitle = () =>{
         return(
             <div className="card__title">
                 <h3 className="card__text">Вывод</h3>
             </div>
         );
     }
-
-    CardOutput = () =>{
+    const CardPosOutput = () =>{
         return(
-            <div name ="isOutput" className="card__output">
-                <input className="output" readOnly value = {props.value.value}/>
+            <div className="card__output">
+                <input 
+                    className="output" 
+                    readOnly 
+                    value={ 
+                        !props.error ?
+                            props.output.id != undefined ?
+                                props.output.reply ?
+                                    `${props.output.inputFirst} является анаграммой ${props.output.inputSecond}`
+                                    : `${props.output.inputFirst} не является анаграммой ${props.output.inputSecond}`
+                                : ''
+                        : props.error
+                    }
+                />
             </div>
         );
     }
@@ -20,9 +31,9 @@ function CardPosOutput(props) {
     return (
         <div className="card card--two--pos">
             <CardOutputTitle/>
-            <CardOutput/>
+            <CardPosOutput/>
         </div>
     )
 }
 
-module.exports = {CardPosOutput}
+module.exports = {CardOutput}

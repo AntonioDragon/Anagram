@@ -1,6 +1,6 @@
 const React = require("react");
 
-function CardPosInput(props) {
+function CardInput(props) {
     return (
         <div className="card card--one--pos">
             <div className="card__title">
@@ -10,7 +10,7 @@ function CardPosInput(props) {
                 <input 
                     name = "isInputOne" 
                     onChange = {e => props.firstHandler(e)} 
-                    value = {props.valfirst.value} 
+                    value = {props.valFirst.value} 
                     className="input input-first" 
                     type="text" 
                     placeholder="Первое слово"
@@ -20,7 +20,7 @@ function CardPosInput(props) {
                 <input 
                     name = "isInputTwo" 
                     onChange = {e => props.secondHandler(e)} 
-                    value = {props.valsecond.value} 
+                    value = {props.valSecond.value} 
                     className="input input-second" 
                     type="text" 
                     placeholder="Второе слово"
@@ -30,4 +30,4 @@ function CardPosInput(props) {
     )
 }
 
-module.exports = {CardPosInput}
+module.exports = {CardInput}

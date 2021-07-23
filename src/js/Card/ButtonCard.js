@@ -1,16 +1,17 @@
-const React = require("react");
-const {useState} = require("react");
+const React = require("react")
+const {useState} = require("react")
 
-const {CardPosInput} = require("./components/CardInput");
-const {CardPosOutput} = require("./components/CardOutput");
+const {CardInput} = require("./components/CardInput")
+const {CardOutput} = require("./components/CardOutput")
 
-const {AnagramCheckMain} = require("./anagramMain")
+const { anagramCheck } = require("./anagramCheck.js")
 
-var value = '';
 
 function ButtonCard(props) {
-    const [valFirst, setStateFirst] = useState({value: ""});
-    const [valSecond, setStateSecond] = useState({value: ""});
+    const [valFirst, setStateFirst] = useState({value: ""})
+    const [valSecond, setStateSecond] = useState({value: ""})
+    const [valKey, setStateKey] = useState({key : 1})
+    const [valError, setStateError] = useState('')
 
     const firstHandler = (e) => {
         setStateFirst({
@@ -26,32 +27,44 @@ function ButtonCard(props) {
 
     const checkValid = (check) => check.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІёЁ]/, "")
 
+    const AnagramCreateReply = () => new Object(
+        {
+            id: valKey.key, 
+            inputFirst: valFirst.value, 
+            inputSecond: valSecond.value, 
+            reply: anagramCheck(valFirst.value, valFirst.value)
+        }
+    )
+        
     const onClickAnagram = (e) => {
-        if (valFirst.value || valSecond.value){
-            value = AnagramCheckMain(valFirst, valSecond)
-            props.setArrHistory(props.arrHistory.concat(value))
+        if (valFirst.value != '' && valSecond.value != ''){
+            props.setArrHistory(props.arrHistory.concat(AnagramCreateReply()))
+            setStateKey({key: valKey.key + 1})
+            setStateError("")
         }   
-        else value = {value : "Вы не ввели все данные"};
+        else{setStateError("Вы не ввели все данные")} 
     }
 
     return (
         <form className ="cards" autoComplete="off">   
-            <CardPosInput 
-                firstHandler = {firstHandler}
-                secondHandler = {secondHandler}
-                valfirst = {valFirst}  
-                valsecond = {valSecond}
+            <CardInput 
+                firstHandler={firstHandler}
+                secondHandler={secondHandler}
+                valFirst={valFirst}  
+                valSecond={valSecond}
             />
             <div className="card-button card-button--pos">
                 <button 
                     className="card-button__anagram" 
                     type="button" 
-                    onClick = {e =>onClickAnagram(e)}>
+                    onClick={e =>onClickAnagram(e)}
+                >
                     Проверить
                 </button>
             </div>
-            <CardPosOutput 
-                value = {value}
+            <CardOutput 
+                output={props.arrHistory[props.arrHistory.length-1]}
+                error={valError}
             />
         </form>
     )

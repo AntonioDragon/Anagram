@@ -9,7 +9,7 @@ const {HeaderBlock} = require("./Header/Header.js")
 const {HistoryButton} = require("./History/HistoryButton.js")
 
 const App = () => {
-    const [arrHistory, setArrHistory] = useState([]);
+    const [arrHistory, setArrHistory] = useState([{}]);
 
     return (
         <React.Fragment>    
