@@ -7,7 +7,6 @@
     "watch": "webpack serve --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "test": "react-scripts test",
     "jest": "jest"
   },
   "author": "Antonio",
@@ -34,7 +33,6 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3"
+    "react-dom": "^17.0.2"
   }
 }
